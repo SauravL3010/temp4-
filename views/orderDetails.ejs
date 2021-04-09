@@ -1,0 +1,67 @@
+<%- include("./partials/headnocontainer.ejs") %>
+
+<br>
+
+<h2 style="color:rgb(136,0,0); padding-left: 20px;"><%= order %></h2>
+
+<br>
+
+
+<table class="table">
+
+
+    <thead>
+        <th>Order #</th>
+        <th>Ship To</th>
+        <th>Via</th>
+        <th>Date Received</th>
+        <th>Date Shipped</th>
+        <th>Date Billed</th>
+        <th>Status</th>
+        <th>Month</th>
+        <th>Original Print</th>
+    </thead>
+    <tbody id="mainList">
+
+
+
+
+            <tr class="sig-row">
+                <td><%= order %></td>
+                <td><%= orderdata["shipTo"] %></td>
+                <td><%= orderdata["via"] %></td>
+                <td><%= orderdata["dateReceived"] %></td>
+                <td><%= orderdata["shippedDate"] %></td>
+                <td><%= orderdata["billedDate"] %></td>
+                <td><%= orderdata["status"] %></td>
+                <td><%= orderdata["month"] %></td>
+                <td><%= orderdata["originalPrint"] %></td>
+            </tr>
+
+
+
+
+
+    </tbody>
+
+</table>
+
+
+<section>
+    <% if((typeof(file) !== 'undefined')) { %>
+        <embed class="sig-pdf" src="<%= file.url %>">
+    <% } %>
+</section>
+
+
+
+   <!-- <%= orderdata["fileDirectory"] %> -->
+
+   
+
+
+
+
+
+
+<%- include("./partials/footnocontainer.ejs") %>

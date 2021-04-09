@@ -1,0 +1,41 @@
+<%- include("./partials/head.ejs") %>
+
+<br>
+<br>
+
+<table class="table">
+
+
+    <thead>
+
+
+        <th>Months</th>
+
+
+    </thead>
+    <tbody id="mainList">
+
+
+        
+        <% if (lst.length != 0) { %>
+            <% lst.forEach((month)=>{ %>
+                <tr>
+                    <td class="sig-order"><a class='sig-links' href="/mainPage/markham/<%= month %>"><%= month %></a></td>
+                </tr>
+            <% }) %>
+        <% } else { %>
+                <tr>
+                    <td>No Entries Here</td>
+                </tr>
+        <% } %>
+        
+
+
+    </tbody>
+
+</table>
+
+
+
+
+<%- include("./partials/foot.ejs") %>
